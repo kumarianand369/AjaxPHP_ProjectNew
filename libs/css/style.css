@@ -1,0 +1,232 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.42em;
+    color:#A7A1AE;
+    background-color:#1F2739;
+  }
+  h1 {
+    font-size:3em; 
+    font-weight: 300;
+    line-height:1em;
+    text-align: center;
+    color: #4DC3FA;
+  }
+  
+  h2 {
+    font-size:1em; 
+    font-weight: 300;
+    text-align: center;
+    display: block;
+    line-height:1em;
+    padding-bottom: 2em;
+    color: #FB667A;
+  }
+
+  
+  .blue { color:  #4DC3FA;; }
+  .green { color: #309e4d; }
+  
+
+  /* Table */
+
+  table {
+    text-align: center;
+    border: 2px solid #000000;
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 50%;
+    margin: 0 auto;
+    padding: 0px;
+    
+   }
+
+   thead #head {
+    font-size: 1.5em;
+    
+  }
+  
+  table th {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #000000;
+    background: rgba(44, 145, 240, 0.562);
+    font-weight: bold;
+    
+  }
+
+  table td {
+    padding: 20px;
+    border: 2px solid #000000;
+   
+  }
+  
+ 
+  table tr {
+    background-color: #FB667A;
+    color: #000000;
+    text-align: center;
+  }
+  
+
+  table tr #results {
+    background-color:#FB667A;
+    padding: 0px;
+  }
+ 
+
+
+.circle{
+  align-items: center;
+  justify-content: center;
+  color: #FB667A;
+  background-color: #3b4250;
+}
+#table {
+  display: none;
+  text-align: center;
+}
+.apiName {
+    color: #FB667A;
+    background-color: #2C3446; 
+  }
+  
+.apiDescription {
+    background-color: #3b4250;
+  }
+  
+
+/* hover */
+  table:hover, table tr:hover, table td:hover {
+    background-color: rgba(255, 255, 0, 0.311);
+  }
+
+/* Button  */
+
+.submitButton {
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    border-radius: 50%;
+    color: #313133;
+    background-color: #4fd1c5;
+    border: none;
+    box-shadow: 12px 12px 24px rgba(236, 240, 44, 0.64);
+  }
+ #btnRun{
+  color: #FB667A;
+  background-color: #2C3446; 
+ }
+#selCountry{
+  color: #FB667A;
+  background-color: #2C3446; 
+}
+#selLanguage{
+  color: #FB667A;
+  background-color: #2C3446; 
+}
+
+#btnearthquakes1{
+  color: #FB667A;
+  background-color: #2C3446; 
+
+}
+#enorth{
+  color: #FB667A;
+  background-color: #2C3446; 
+}
+#ewest{
+  color: #FB667A;
+  background-color: #2C3446; 
+}
+#esouth{
+  color: #FB667A;
+  background-color: #2C3446; 
+}
+#eeast{
+  color: #FB667A;
+  background-color: #2C3446; 
+}
+
+#flat{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+#flng{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+#btnfindNearby{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+
+#btnweather{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+
+#wnorth{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+
+#wsouth{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+
+#weast{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+
+#wwest{
+  color: #FB667A;
+  background-color: #2C3446;
+}
+  /* PreLoader */
+
+#preloader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+	align-items: center;
+  width: 140px;
+  height: 140px;
+  margin: -65px 0 0 -65px;
+  border-radius: 50%;
+  border-top: 18px solid #cadb34ab;
+  
+  -webkit-animation: animate-preloader 2s linear infinite;
+  animation: animate-preloader 2s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

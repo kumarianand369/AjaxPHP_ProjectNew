@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Khushi" />
+    <meta
+      name="description"
+      content="Project on Html,jQuery,Ajax,Php and Remote API's."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>AjaxPHP_Project</title>
+      <link href="libs/css/style.css" rel="stylesheet" /> 
+  </head>
+  <!-- Preloader-->
+  <body onload="myFunction()">
+    <h1>
+        <span>Ajax</span>
+    </h1>
+    <h2>
+      Project on Html,jQuery,Ajax,Php and Remote API's.
+    </h2>
+  <!-- Preloader-->
+    <div id="preloader">
+      <img src="libs/img/preloader.gif" alt="preloader">
+    </div>
+    <!--Table Start-->
+    <div id="table">
+      <table>
+        <thead>
+            <tr id="head">
+            <th>API Name</th>
+            <th>API Description</th>
+            <th>Submit Button</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td class="apiName">Country Information</td>
+            <td class="apiDescription">
+              Returns Country Info like Capital city, Population, Area in Square KM.
+            </td>
+            <td class="circle">
+           <button class="submitButton" onclick="buttonFirst('divCountry')">Submit</button>
+            </td>
+          </tr>
+          
+
+          <tr>
+            <td class="apiName">Earthquakes</td>
+            <td class="apiDescription">
+              Returns a list of earthquakes,ordered by magnitude
+            </td>
+            <td class="circle">
+            <button class="submitButton" onclick="buttonSecond('divEarthquakes')">SUBMIT</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="apiName">FindNearby</td>
+            <td class="apiDescription">
+              Returns the closest toponym for the lat/lng query as xml document.
+            </td>
+            <td class="circle">
+              <button class="submitButton" onclick="buttonFourth('divfindNearby')">SUBMIT</button>
+            </td>
+          </tr>
+
+         <tr>
+            <td class="apiName">Weather</td>
+            <td class="apiDescription">
+              Returns a list of weather stations with the most recent weather observation.
+
+            </td>
+            <td class="circle">
+              <button class="submitButton" onclick="buttonThird('divWeather')">SUBMIT</button>
+            </td>
+          </tr>
+          
+         <tr>
+          <td colspan="7" id="results">Results: <br></td>
+         
+         </tr>
+         
+          <tr>
+            <td colspan="7" >
+              <br>
+              <div id="divCountry"  style="display:none">
+        
+                <select id="selCountry">
+                  <option value="GB">Great Britain</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                  <option value="US">USA</option>
+                </select>
+            
+                <select id="selLanguage">
+                  <option value="en">English</option>
+                  <option value="fr">Francais</option>
+                  <option value="de">Deutsche</option>
+                </select>
+                    
+                <button id="btnRun">Run</button>
+            
+                <br><br>
+                    
+                   
+                <div id="divResults">
+                  
+                  <table>
+                            
+                          <tr>
+                      <td align="right">
+                        Continent: 
+                      </td>
+                      <td id="txtContinent">
+                        
+                      </td>
+            
+                    </tr>
+            
+                    <tr>
+                      <td align="right">
+                        Capital: 
+                      </td>
+                      <td id="txtCapital">
+                        
+                      </td>
+            
+                    </tr>
+            
+                    <tr>
+                      <td align="right">
+                        Languages: 
+                      </td>
+                      <td id="txtLanguages">
+                        
+                      </td>
+            
+                    </tr>
+            
+                    <tr>
+                      <td align="right">
+                        Population: 
+                      </td>
+                      <td id="txtPopulation">
+                        
+                      </td>
+            
+                    </tr>
+            
+                    <tr>
+                      <td align="right">
+                        Area (km<sup>2</sup>): 
+                      </td>
+                      <td id="txtArea">
+                        
+                      </td>
+            
+                    </tr>
+            
+                  </table>
+                       
+                </div>
+                  
+            </div>
+
+
+<!-------------Earthquakes---------------------->      
+          
+          <br>
+		<div id="divEarthquakes" style="display:none">
+      <label>North : </label>
+      <input type="number" id="enorth" name="North" placeholder="44.1">
+       <label>South : </label>
+       <input type="number" id="esouth" name="South" placeholder="89.9">
+       <br>
+       <label>East : </label>
+       <input type="number" id="eeast" name="East" placeholder="2.4">
+       <label>West : </label>&nbsp;
+       <input type="number" id="ewest" name="West" placeholder="15.2">
+      
+       <br>
+       <br>
+         <button id="btnearthquakes1">EarthquakesBUTTON</button>
+        
+        <br>
+        <br>
+        
+        
+        <div id="divearthquakes">
+            
+            
+             <table>
+                 <tr>
+					<td align="right">
+						Src: 
+					</td>
+					<td id="txtSrc">
+						
+					</td>
+
+				</tr>
+                
+                   <tr>
+					<td align="right">
+						DateTime: 
+					</td>
+					<td id="txtDateTime">
+						
+					</td>
+
+				</tr>
+            
+    
+                <tr>
+					<td align="right">
+						Depth: 
+					</td>
+					<td id="txtDepth">
+						
+					</td>
+
+				</tr>
+                
+                
+                <tr>
+					<td align="right">
+						Language: 
+					</td>
+					<td id="txtLng">
+						
+					</td>
+
+				</tr>
+                
+                
+                 <tr>
+					<td align="right">
+						Magnitude: 
+					</td>
+					<td id="txtMagnitude">
+						
+					</td>
+
+				</tr>
+        
+                <tr>
+					<td align="right">
+						Lat: 
+					</td>
+					<td id="txtLat">
+						
+					</td>
+
+				</tr>
+     
+            </table>
+        
+        </div>
+            
+</div>            
+<!----------End---Earthquakes---------------------->  
+<!--------------findNearby----------------------------------->
+
+
+ <br>
+       <div id="divfindNearby"  style="display:none">
+   
+         <label>Lat: </label>
+         <input type="number" id="flat" name="Lat" placeholder="47.3">
+         <label>Lng : </label>
+          <input type="number" id="flng" name="Lng" placeholder="9">
+
+       <button id="btnfindNearby">findNearbyBUTTON</button>
+
+     <br>
+     <br>
+         <div id="divfindNearby">
+   
+            <table>
+              <tr>
+                <td align="right">
+                  adminCode1: 
+                </td>
+                <td id="txtadminCode1">
+                </td>
+                </tr>
+                      
+                <tr>
+                <td align="right">
+                  lng: 
+                </td>
+                <td id="txtlng">
+                </td>
+                </tr>
+                      
+                <tr>
+                <td align="right">
+                  distance: 
+                </td>
+                <td id="txtdistance">
+                </td>
+                </tr>
+                      
+                <tr>
+                <td align="right">
+                    geonameId: 
+                </td>
+                <td id="txtgeonameId">
+                </td>
+                </tr>      
+       </table>
+     </div>
+   </div>  
+
+
+
+<!-------------End -findNearby------------------------------>
+
+
+<!-------------Weather---------------------->      
+          
+<br>
+  <div id="divWeather" style="display:none">
+    <label>North : </label>
+    <input type="number" id="wnorth" name="North"placeholder="41.1">
+     <label>South : </label>
+     <input type="number" id="wsouth" name="South" placeholder="9.9">
+     <br>
+     <label>East : </label>
+     <input type="number" id="weast" name="East" placeholder="22.4">
+     <label>West :  </label>&nbsp;
+     <input type="number" id="wwest" name="West" placeholder="55.2">      
+
+     <br>
+     <br>
+      <button id="btnweather">WeatherBUTTON</button>  
+    <br>
+    <br>
+    
+    <div id="divWeather">
+      <table>
+        <tr>
+          <td align="right">
+            Lng: 
+         </td>
+        <td id="txtlng">
+       </td>
+       </tr>
+
+       
+       <tr>
+        <td align="right">
+         Datetime: 
+        </td>
+        <td id="txtdatetime">
+         
+        </td>
+        </tr>
+         
+
+        <tr>
+          <td align="right">
+           DewPoint: 
+          </td>
+          <td id="txtdewPoint">
+           
+          </td>
+          </tr>
+     
+          <tr>
+            <td align="right">
+             Temperature: 
+            </td>
+            <td id="txttemperature">
+             
+            </td>
+            </tr>
+            
+            <tr>
+              <td align="right">
+               Humidity: 
+              </td>
+              <td id="txthumidity">
+               
+              </td>
+              
+              </tr>
+
+      </table>
+
+   </div>
+</div>           
+        
+<!----------End---Weather---------------------->  
+             
+          </td>
+
+          </tr>
+          
+        </tbody>
+        
+      </table>
+     
+    </div>
+          
+
+    <script src="libs/js/jquery-2.2.3.min.js"></script>
+    <script src="libs/js/script4.js"></script>
+ 
+  </body>
+</html>
